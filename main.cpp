@@ -5,7 +5,7 @@
 #include "State.h"
 
 int main() {
-    unsigned int n = 0, m = 0;
+    /*unsigned int n = 0, m = 0;
     unsigned int nTurnos = 0;
     std::cout << "Indica el tamaño de la rejilla (FilasxColumnas)(NxM): ";
     std::cin >> n >> m; // Filas x Columnas (m filas. n columnas)
@@ -23,14 +23,18 @@ int main() {
         if (i != -1){
             std::cin >> j;
         }  
-        if(i != -1 && rejilla1.celulaViva(i, j)) {
+        if(i != -1 && rejilla1.verificacion(i, j)) {
             std::cout << "Ha habido un error, introduce valores correctos. ";
         } else if (i != -1) {
             std::cout << "Subida. Correcta: (" << i << ", " << j << ")" << std::endl;
         }
     }
     std::cout << std::endl << "Has finalizado el proceso de subida de células vivas..." << std::endl << std::endl;
-    rejilla1.nextGeneration(rejilla1);
+    rejilla1.nextGeneration(rejilla1);*/
+
+    Grid celulaprueba (5, 5, 5);
+    std::cout << " //// " << std::endl;
+    std::cout << "Prueba " << celulaprueba.getGrid(1, 1) << std::endl;
 
     return 0;
 }

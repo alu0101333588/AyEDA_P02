@@ -10,9 +10,15 @@ class Grid {
         Grid(int n, int m, int turnos); // Constructor 
         const Cell& getCell(int i, int j) const;
         void nextGeneration(Grid& rejilla1);
-        bool celulaViva(int i, int j); // Marcar como viva la célula ubicada en la posición (i, j)
+        bool verificacion(int i, int j); // Marcar como viva la célula ubicada en la posición (i, j)
                                         // Si sale true entonces ha tenido lugar un error
         void visualizacion();
+
+        char getGrid(int i, int j);
+
+        // NUEVAS FUNCIONES:
+        // const Cell& getCell(int i, int j) const;
+        // void nextGeneration(); // SE DEBE ALIMENTAR DE GETCELL !!!!
 
 
     private:

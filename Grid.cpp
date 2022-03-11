@@ -4,7 +4,10 @@
 #include "Grid.h"
 #include "State.h"
 
-
+char Grid::getGrid(int i, int j) { 
+    std::cout << "pruebaaaa" << std::endl;
+    return rejilla_[i][j].getState(); 
+}
 
 Grid::Grid(int n, int m, int turnos) {
     nTurnos_ = turnos;
@@ -22,19 +25,19 @@ Grid::Grid(int n, int m, int turnos) {
     }
 }
 
-bool Grid::celulaViva(int i, int j) {
+bool Grid::verificacion(int i, int j) { // verifica si la posición indicada existe o no
     if (i+1 >= n_-1 || j+1 >= m_-1 || i < 0 || j < 0) {
         return true; // Manifestamos un error
     }
-    State estado1;
+    /*State estado1;
     estado1.setViva();
-    rejilla_[i+1][j+1].setState(estado1);
+    rejilla_[i+1][j+1].setState(estado1);*/
     return false;
 }
 
 void Grid::nextGeneration(Grid& rejilla1){
 
-    std::cout << "TURNO 0: " << std::endl << "  ";
+    /*std::cout << "TURNO 0: " << std::endl << "  ";
     for (int i = 0; i < m_-2; i++){ // Leyenda números parte superior
         std::cout << i << " ";
     }
@@ -58,20 +61,35 @@ void Grid::nextGeneration(Grid& rejilla1){
         for (int i = 1; i < n_-1; i++) { // Se aplican las condiciones
             for (int j = 1; j < m_-1; j++) {
                 State estado3 = rejilla_[i][j].getState();
-                if (estado3.getState1() == 0) {
-                    if (rejilla_[i][j].neighbors(rejilla1) == 3) {
-                        State estado4;
-                        estado4.setViva();
-                        rejilla_[i][j].setNextState(estado4);
+
+                switch (estado3) {
+                case ' '
+                    if (rejilla_[i][j].neighbors() == 2) {
+                        StateEgg estadoHuevo;
+                        rejilla_[i][j].setNextState(estadoHuevo);
                     } else {
-                        State estado4;
-                        estado4.setMuerta();
-                        rejilla_[i][j].setNextState(estado4);
+                        StateDead estadoMuerte;
+                        rejilla_[i][j].setNextState(estadoMuerte);
                     }
+                    break;
+
+                case 'H'
+                    if (rejilla_[i][j].neighbors() == 1) {
+                        StateEgg estadoMuerta;
+                        rejilla_[i][j].setNextState(estadoMuerta);
+                    } else {
+                        StateDead estadoLarva;
+                        rejilla_[i][j].setNextState(estadoLarva);
+                    }
+                    break;
+                
+                default:
+                    std::cout << "ERROR. No hay ninguna de las opciones disponibles" << std::endl;
+                    break;
                 }
 
-                if (estado3.getState1() == 1) {
-                    if (rejilla_[i][j].neighbors(rejilla1) == 2 || rejilla_[i][j].neighbors(rejilla1) == 3) {
+                if (estado3.getState1() == 0) {
+                    if (rejilla_[i][j].neighbors(rejilla1) == 3) {
                         State estado4;
                         estado4.setViva();
                         rejilla_[i][j].setNextState(estado4);
@@ -107,7 +125,7 @@ void Grid::nextGeneration(Grid& rejilla1){
             std::cout << "__";
         }
         std::cout << std::endl;
-    }
+    }*/
 }
 
 void Grid::visualizacion() {

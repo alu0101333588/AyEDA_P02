@@ -3,14 +3,16 @@
 #include <string>
 #include "Cell.h"
 #include "State.h"
+#include "StateDead.h"
 
 void Cell::updateState(){
-    //std::cout << "UPDATE (" << i_-1 << ", " << j_-1 << ") : " << estado_.getState1() << " :: " << estadoFuturo_.getState1() << std::endl;
     estado_ = estadoFuturo_;
 }
 
 int Cell::neighbors(const Grid& rejilla1) { // Indica el número de células vecinas vivas
-    int contador = 0;
+
+    return estado_->neighbors(rejilla1, i_, j_);
+    /*int contador = 0;
     for (int i = i_-1; i < i_+2; i++){
         for (int j = j_-1; j < j_+2; j++){
             //std::cout << "Contador: " << i << ", " << j << " :: " << i_ << ", " << j_ << std::endl;
@@ -28,22 +30,29 @@ int Cell::neighbors(const Grid& rejilla1) { // Indica el número de células vec
         }
     }
     //std::cout << "update (" << i_-1 << ", " << j_-1 << ") : " << contador << " :: " << std::endl;
-    return contador;
+    return contador;*/
     
 }
 
 std::ostream& operator<<(std::ostream& os, const Cell &celula1){
-    if (celula1.getState().getState1() == 1) {
+    /*if (celula1.getState().getState1() == 1) {
         os << "X"; // en caso de estar viva
     } else {
         os << " "; // TEMPORAL
-    }
+    }*/
+    os << celula1.getState();
     return os;
 }
 
 Cell::Cell (){
-    estado_.setMuerta(); // Se marca como muerta inicialmente
-    estadoFuturo_.setMuerta(); // Se marca como muerta inicialmente
+
+    estado_ = new StateDead();
+    /*StateDead* estadomuerte;
+    estado_ = StateEgg::StateEgg; // Se marca como muerta inicialmente
+    estadoFuturo_ = estadomuerte; // Se marca como muerta inicialmente*/
 }
 
-
+char Cell::getState() const {
+    std::cout << "GetState " << std::endl;
+    return estado_->getState();
+}
