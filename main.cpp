@@ -15,7 +15,8 @@ int main() {
     rejilla1.visualizacion();
     int i = 0, j = 0; // i Filas, j Columnas
 
-    std::cout << "A continuación indica las posiciones de las células vivas (i,j)" << std::endl;
+    std::cout << "A continuación indica las posiciones de las células vivas (i,j) y el estado" << std::endl;
+    std::cout << "||| ESTADOS DISPONIBLES: Huevo (H), Larva (L), Pupa (P), Adulta (A), Muerta (M) |||" << std::endl;
     std::cout << "****(Cuando desees finalizar escribe -1)****" << std::endl;
     while (i != -1) {
         std::cout << "Introduce (i,j): ";

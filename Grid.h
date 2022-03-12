@@ -9,16 +9,21 @@ class Grid {
     public:
         Grid(int n, int m, int turnos); // Constructor 
         const Cell& getCell(int i, int j) const;
-        void nextGeneration(Grid& rejilla1);
+        //void nextGeneration(Grid& rejilla1);
         bool verificacion(int i, int j); // Marcar como viva la célula ubicada en la posición (i, j)
                                         // Si sale true entonces ha tenido lugar un error
         void visualizacion();
 
         char getGrid(int i, int j);
 
+        bool Letras(char letra1); // Verifica si la letra es correcta y realiza la actualización en la rejilla 
+        void Menu(); // Menú interactivo para solicitar datos al usuario por pantalla
+
+
+
         // NUEVAS FUNCIONES:
         // const Cell& getCell(int i, int j) const;
-        // void nextGeneration(); // SE DEBE ALIMENTAR DE GETCELL !!!!
+        void nextGeneration(); // SE DEBE ALIMENTAR DE GETCELL !!!!
 
 
     private:

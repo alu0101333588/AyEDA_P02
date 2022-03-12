@@ -9,7 +9,6 @@
 #include "StateDead.h"
 
 char Grid::getGrid(int i, int j) { 
-    std::cout << "pruebaaaa" << std::endl;
     return rejilla_[i][j].getState(); 
 }
 
@@ -28,7 +27,13 @@ Grid::Grid(int n, int m, int turnos) {
         }
     }
 
-    rejilla_[3][3].setNextState(new StateEgg);
+}
+
+void Grid::Menu () {
+
+}
+
+bool Grid::Letras(char letra1) {
 
 }
 
@@ -42,7 +47,7 @@ bool Grid::verificacion(int i, int j) { // verifica si la posición indicada exi
     return false;
 }
 
-void Grid::nextGeneration(Grid& rejilla1){
+void Grid::nextGeneration(/*Grid& rejilla1*/){
 
     /*std::cout << "TURNO 0: " << std::endl << "  ";
     for (int i = 0; i < m_-2; i++){ // Leyenda números parte superior
@@ -140,7 +145,6 @@ void Grid::visualizacion() {
     // n_ Filas
     // m_ Columnas
 
-    std::cout << "INFORME: n" << n_ << ". m" << m_ << " :: " << n_-2 << " : " << m_-2 << std::endl; 
     for (int i = 0; i < m_-2; i++){
         std::cout << "_ ";
     }

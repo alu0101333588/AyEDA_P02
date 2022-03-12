@@ -14,7 +14,7 @@ INCLUDE = -I.
 # Special libraries (none for now)
 LIB =
 
-$(TARGET): main.o Cell.o Grid.o StateDead.o StateEgg.o
+$(TARGET): main.o Cell.o Grid.o State.h StateDead.o StateEgg.o StateAdult.o StateLarva.o StatePupa.o
 	$(CC) -o $@ $^ $(LIB)
 
 main.o: main.cpp
@@ -26,7 +26,19 @@ Cell.o: Cell.cpp Cell.h
 Grid.o: Grid.cpp Grid.h
 	$(CC) $(CFLAGS) $(INCLUDE) -c $<
 
-StateDead.o: State.h StateDead.cpp StateDead.h
+State.o: State.h
+	$(CC) $(CFLAGS) $(INCLUDE) -c $<
+
+StateDead.o: StateDead.cpp StateDead.h
+	$(CC) $(CFLAGS) $(INCLUDE) -c $<
+
+StateAdult.o: StateAdult.cpp StateAdult.h
+	$(CC) $(CFLAGS) $(INCLUDE) -c $<
+
+StateLarva.o: StateLarva.cpp StateLarva.h
+	$(CC) $(CFLAGS) $(INCLUDE) -c $<
+
+StatePupa.o: StatePupa.cpp StatePupa.h
 	$(CC) $(CFLAGS) $(INCLUDE) -c $<
 
 StateEgg.o: StateEgg.cpp StateEgg.h

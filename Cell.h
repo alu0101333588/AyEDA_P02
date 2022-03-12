@@ -29,7 +29,7 @@ class Cell {
 
     private:
         State* estado_;
-        State* estadoFuturo_; // Estado al que debe cambiar 
+        //State* estadoFuturo_; // Estado al que debe cambiar 
         int i_; // Posición i que ocupa la célula
         int j_; // Posición j que ocupa la célula
 

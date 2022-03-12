@@ -58,6 +58,5 @@ Cell::Cell (){
 }
 
 char Cell::getState() const {
-    std::cout << "GetState " << std::endl;
     return estado_->getState();
 }

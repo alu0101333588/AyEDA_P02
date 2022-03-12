@@ -3,16 +3,13 @@
 
 #include "State.h"
 
-//Clase Base
-
-// Clases Derivadas
-class StateDead : public State { // Muerte: 
+class StateDead : public State { 
     public:
-        StateDead(); // Añadida
-        //void neighbors (const Grid& rejilla1, int i, int j);
+        StateDead(); 
+        void neighbors (const Grid& rejilla1, int i, int j);
         State* nextState();
-        char getState() const; // Temporal
-        ~StateDead() = default; // IMPLEMENTAR
+        char getState() const;
+        ~StateDead() = default;
     
     /*private:
         char State_;
