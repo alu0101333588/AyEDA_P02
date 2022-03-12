@@ -19,9 +19,9 @@ class State {
         
         //void setState(char estado1) { estado_ = estado1; } // Añadido
         
-    /*protected:
+    protected:
         char State_;
-        int* neighbors_; */
+        int* neighbors_;
 
 };
 

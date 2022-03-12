@@ -34,7 +34,8 @@ int main() {
 
     Grid celulaprueba (5, 5, 5);
     std::cout << " //// " << std::endl;
-    std::cout << "Prueba " << celulaprueba.getGrid(1, 1) << std::endl;
+    std::cout << "Prueba: " << celulaprueba.getGrid(1, 1) << std::endl;
+    std::cout << "PruebaNueva: " << celulaprueba.getGrid(3, 3) << std::endl;
 
     return 0;
 }

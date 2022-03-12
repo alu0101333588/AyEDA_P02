@@ -2,7 +2,11 @@
 #include <iostream>
 #include <string>
 #include "Grid.h"
-#include "State.h"
+
+#include "State.h" // Temporal
+
+#include "StateEgg.h" // Temporal
+#include "StateDead.h"
 
 char Grid::getGrid(int i, int j) { 
     std::cout << "pruebaaaa" << std::endl;
@@ -23,6 +27,9 @@ Grid::Grid(int n, int m, int turnos) {
             rejilla_[i][j].setposicion(i, j);
         }
     }
+
+    rejilla_[3][3].setNextState(new StateEgg);
+
 }
 
 bool Grid::verificacion(int i, int j) { // verifica si la posición indicada existe o no

@@ -14,9 +14,9 @@ class StateDead : public State { // Muerte:
         char getState() const; // Temporal
         ~StateDead() = default; // IMPLEMENTAR
     
-    private:
+    /*private:
         char State_;
-        int neighbors_;
+        int neighbors_;*/
 };
 
 #endif
