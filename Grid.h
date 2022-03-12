@@ -16,14 +16,14 @@ class Grid {
 
         char getGrid(int i, int j);
 
-        bool Letras(char letra1); // Verifica si la letra es correcta y realiza la actualización en la rejilla 
-        void Menu(); // Menú interactivo para solicitar datos al usuario por pantalla
+        bool Letras(char letra1, int i, int j); // Verifica si la letra es correcta y realiza la actualización en la rejilla 
+        void Menu(Grid& rejilla1); // Menú interactivo para solicitar datos al usuario por pantalla
 
 
 
         // NUEVAS FUNCIONES:
         // const Cell& getCell(int i, int j) const;
-        void nextGeneration(); // SE DEBE ALIMENTAR DE GETCELL !!!!
+        void nextGeneration(Grid& rejilla1); // SE DEBE ALIMENTAR DE GETCELL !!!!
 
 
     private:

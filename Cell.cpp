@@ -6,6 +6,7 @@
 #include "StateDead.h"
 
 void Cell::updateState(){
+    estado_ = estado_->nextState();
     //estado_ = estadoFuturo_;
     /*delete[] estado_;
     //State* nuevoestado;
@@ -13,8 +14,8 @@ void Cell::updateState(){
     estado_ = estadoFuturo_;*/
 }
 
-//int Cell::neighbors(const Grid& rejilla1) { // Indica el número de células vecinas vivas
-
+void Cell::neighbors(const Grid& rejilla1) { // Indica el número de células vecinas vivas
+    estado_->neighbors(rejilla1, i_, j_);
     //return estado_->neighbors(rejilla1, i_, j_);
     //return 1;
     /*int contador = 0;
@@ -37,7 +38,7 @@ void Cell::updateState(){
     //std::cout << "update (" << i_-1 << ", " << j_-1 << ") : " << contador << " :: " << std::endl;
     return contador;*/
     
-//}
+}
 
 std::ostream& operator<<(std::ostream& os, const Cell &celula1){
     /*if (celula1.getState().getState1() == 1) {
