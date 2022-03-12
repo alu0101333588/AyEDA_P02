@@ -48,9 +48,9 @@ void Grid::Menu (Grid& rejilla1) {
         if (i != -1){
             std::cin >> j;  
             std::cin >> letra;
-            if(verificacion(i, j)) {
+            if(verificacion(i+1, j+1)) {
                 std::cout << "*** Ha habido un error, introduce valores correctos. *** (ERROR al introducir valores NUMÉRICOS). " << std::endl;
-            } else if (Letras(letra, i, j)) {
+            } else if (Letras(letra, i+1, j+1)) {
                 std::cout << "Ha habido un error, introduce valores correctos. (ERROR al introducir la LETRA)." << std::endl;
             } else {
                 std::cout << "Subida. Correcta: (" << i << ", " << j << "). Estado: " << letra << std::endl;
@@ -89,7 +89,7 @@ bool Grid::Letras(char letra1, int i, int j) {
 }
 
 bool Grid::verificacion(int i, int j) { // verifica si la posición indicada existe o no
-    if (i+1 >= n_-1 || j+1 >= m_-1 || i < 0 || j < 0) {
+    if (i >= n_-1 || j >= m_-1 || i < 0 || j < 0) {
         return true; // Manifestamos un error
     }
     /*State estado1;
