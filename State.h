@@ -11,9 +11,9 @@ class Grid;
 class State {
     public:
         State() {}
-        //virtual int neighbors (const Grid& rejilla1, int i, int j) = 0;
-        //virtual State* nextState() = 0;
-        //virtual char getState() const = 0;
+        virtual int neighbors (const Grid& rejilla1, int i, int j) = 0;
+        virtual State* nextState() = 0;
+        virtual char getState() const = 0;
         
         //void setState(char estado1) { estado_ = estado1; } // Añadido
         

@@ -14,7 +14,7 @@ INCLUDE = -I.
 # Special libraries (none for now)
 LIB =
 
-$(TARGET): main.o Cell.o Grid.o
+$(TARGET): main.o Cell.o Grid.o StateDead.o
 	$(CC) -o $@ $^ $(LIB)
 
 main.o: main.cpp
@@ -25,6 +25,8 @@ Cell.o: Cell.cpp Cell.h
 
 Grid.o: Grid.cpp Grid.h State.h
 	$(CC) $(CFLAGS) $(INCLUDE) -c $<
+
+StateDead.o: StateDead.cpp StateDead.h
 
 .PHONY: clean
 clean:

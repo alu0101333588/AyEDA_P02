@@ -11,10 +11,10 @@
 // Clases Derivadas
 class StateDead : public State { // Muerte: 
     public:
-        StateDead() {} // Añadida
-        //int neighbors (const Grid& rejilla1, int i, int j);
-        //State* nextState(); // En caso de éxito
-        //char getState() const {return ' ';}
+        StateDead() {state_ = 'a';} // Añadida
+        int neighbors (const Grid& rejilla1, int i, int j);
+        State* nextState(); // En caso de éxito
+        char getState() const {return ' ';}
     
     private:
         char state_;

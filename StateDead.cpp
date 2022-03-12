@@ -3,6 +3,6 @@
 #include <string>
 #include "StateDead.h"
 
-StateDead::StateDead() {
+/*StateDead::StateDead() {
     state_ = 's';
-}
+}*/
