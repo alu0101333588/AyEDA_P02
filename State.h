@@ -3,22 +3,25 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include "Grid.h"
 
 //Clase Base
 
-class Grid;
+//class Grid;
 class State {
     public:
         State() {}
-        virtual int neighbors (const Grid& rejilla1, int i, int j) = 0;
+        //virtual void neighbors (const Grid& rejilla1, int i, int j) = 0;
         virtual State* nextState() = 0;
         virtual char getState() const = 0;
+        //virtual ~State() = 0;
+        virtual ~State() = default; //{delete[] State_;}
+        //void setState(char* a) {State_ = a;}
         
         //void setState(char estado1) { estado_ = estado1; } // Añadido
         
-    private:
-        char estado_;
+    /*protected:
+        char State_;
+        int* neighbors_; */
 
 };
 

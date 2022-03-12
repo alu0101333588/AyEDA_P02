@@ -1,12 +1,12 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include "Grid.h"
-#include "State.h"
-#include "StateDead.h"
+//#include "Grid.h"
+//#include "State.h"
+// #include "StateEgg.h"
 
 // Estado Huevo (H)
-StateEgg::StateEgg () {
+/*StateEgg::StateEgg () {
     state_ = ' ';
 }
 
@@ -44,16 +44,16 @@ StateEgg::State* nextState() {
 
 
 // Estado Muerte ( )
-/*StateDead::StateDead () {
+StateDead::StateDead () {
     state_ = ' ';
 }
 
 StateDead::State* nextState() {
     StateDead estado1;
     return estado1;
-}*/
+}
 
-/*int StateDead::neighbors (const Grid& rejilla1, int i, int j) { // Devuelve el número de células adultas vecinas
+int StateDead::neighbors (const Grid& rejilla1, int i, int j) { // Devuelve el número de células adultas vecinas
     int contador_adultas = 0;
     for (int a = i-1; a < i+2; a++){
         for (int b = j-1; b < j+2; b++){

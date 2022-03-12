@@ -1,4 +1,4 @@
-TARGET  = juegovida
+TARGET  = ciclovida
 
 # Select Compiler and flags
 CC=g++
@@ -23,10 +23,10 @@ main.o: main.cpp
 Cell.o: Cell.cpp Cell.h
 	$(CC) $(CFLAGS) $(INCLUDE) -c $<
 
-Grid.o: Grid.cpp Grid.h State.h
+Grid.o: Grid.cpp Grid.h
 	$(CC) $(CFLAGS) $(INCLUDE) -c $<
 
-StateDead.o: StateDead.cpp StateDead.h
+StateDead.o: State.h StateDead.cpp StateDead.h
 
 .PHONY: clean
 clean:
